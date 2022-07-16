@@ -1,0 +1,439 @@
+/*  con font-size 62.5 tengo que 1 rem = 10 px, en vez de 16px por default*/
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* desktop hata 1200px*/
+body{
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.header{ 
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background-color: rgb(184, 88, 152);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+}
+#boton-carrito {
+    border: none;
+    color:  #000;
+    font-size: 60px;
+    width: 15%;
+    background-color:  rgb(184, 88, 152);
+    transition: all .3s;
+}
+#boton-carrito:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(184, 88, 152);
+}
+#boton-carrito:focus {
+    outline: none;
+}
+.bu-clas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.titPpal{
+    width: 50%;
+    font-size: 4rem;
+}
+.leyendaPpal{
+    margin-top: 200px;
+    color: #dfe;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    font-size: 2rem;
+}
+.titProductos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: rgb(184, 88, 152);
+}
+
+.imgProductos{    
+    max-width: 1200px;
+    margin:60px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.imagen{
+    width: 250px;
+    height: 270px;
+    margin: auto;
+    padding-left: 50px;
+    padding-top: 10px;
+   
+}
+.imagen1{
+    width: 350px;
+    height: 410px;
+    margin: auto;
+ 
+}
+#imagen-logo{  
+    width: 340px;
+    height:200px;
+    font-size: 40px;
+    float: left;
+}
+.descProducto{
+    width: 80%;
+    display: inline-block;
+}
+.contImg{
+    width: 300px;
+    height: 550px;
+    border: 3px solid rgb(184, 88, 152);
+    margin-top: 80px;
+}
+.contImg1{
+    width: 400px;
+    height: 600px;
+    margin-top: 20px;
+}
+.formulario{
+    position: relative;
+    background-color: white;
+    color: #000;
+    width: 600px;
+    height: 300px;
+    border: 4px solid rgb(184, 88, 152);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#cant{
+    width: 20%;
+    font-size: 30px;
+}
+.letraPrecio{
+    color: rgb(184, 88, 152);
+    font-size: 1.5rem;
+    padding-left: 50px;
+}
+
+.menosmas{
+    font-size: 50px;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+.cantidad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+}
+.rowalineacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+.container-fluid{ 
+    background-color: #000;
+
+}
+#modal-capturo-cantidad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+}
+
+.modal-contenedor, .modal-contenedorE{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form-contenedor{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-contenedor-cantidad{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-carrito{
+    position: relative;
+    background-color: white;
+    min-width: 600px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    width: 150px;
+    color: black;
+    padding-bottom: 5px;
+}
+.modal-carrito #carritoCerrar{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(32, 9, 14);
+    border: none;
+    background-color: white;
+}
+
+.modal-carritoE{
+    position: relative;
+    min-width: 400px;
+    padding: 20px;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(225, 65, 100);
+    border: none;
+    background-color: white;
+    transition:all .5s;
+}
+.modal-clase-cantidad{
+    position: relative;
+    min-width: 600px;
+    padding: 20px;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(225, 65, 100);
+    border: none;
+    background-color: white;
+    transition:all .5s;
+}
+.modal-carritoE #carritoCerrarE{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(32, 9, 14);
+    border: none;
+    background-color: white;
+}
+.modal-clase-cantidad #btn-carrito-cerrar{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(32, 9, 14);
+    border: none;
+    background-color: white;
+}
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+.modal-carritoE #carritoCerrarE:hover {
+    cursor: pointer;
+}
+.modal-carritoE #carritoCerrarE:focus {
+    outline: none;
+}
+.modal-clase-cantidad #btn-capturo-cerrar:hover {
+    cursor: pointer;
+}
+.modal-clase-cantidad #btn-capturo-cerrar:focus {
+    outline: none;
+}
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+    
+}
+
+.productoEnCarrito {
+    border-left: 5px solid rgb(184, 88, 152);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.productoEnCarrito:hover {
+    border-left: 5px solid black;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: red;
+    border: none;
+    font-size: 20px;
+    float: left;
+}
+#btn-comprar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(184, 88, 152);
+    margin-left: 80px;
+}
+#btn-capturo-cerrar, #carritoCerrar{
+    float: right;
+    font-size: 20px;
+}
+#confirmaPedido {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 25px;
+    float: right;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+.boton-eliminar:focus {
+    outline: none;
+}
+
+#inputNombre, #inputDireccion{
+    background-color:rgb(231, 207, 223);
+}
+.btnF{
+    margin-top: 30px;
+}
+.info{
+
+    font-size: 30px;
+}
+/* -------------------------------------------------------------------------*/
+@media screen and (min-width: 300px) and (max-width: 767px){ 
+
+.modal-carrito{
+    min-width: 300px;
+}
+.header{
+    justify-content: center;
+}
+#imagen-logo{  
+    width: 146px;
+    height:130px;
+    font-size: 15px;
+    flex: left;
+}
+#boton-carrito {
+    font-size: 30px;
+}
+.modal-carritoE{
+    min-width: 150px;
+}
+.modal-clase-cantidad{
+    min-width: 250px;
+    font-size: 15px;
+}
+.imagen1{
+    width: 230px;
+    height: 310px;
+    margin: auto;
+}
+.menosmas{
+    font-size: 20px;
+    width: 40px;
+}
+.rowalineacion{
+    margin-left: 0px;
+}
+.cantidad{
+    height: 300px;
+}
+.contImg1{
+    margin-top: 0px;
+    width: 200px;
+    height: 300px;
+}
+#modal-capturo-cantidad{
+    width:305px ;
+    height: 450px;
+    }
+}
+/* -------------------------------------------------------------------------------- */
+@media screen and (min-width: 300px) and (max-width: 420px){ 
+.modal-carrito{
+    min-width: 280px;
+    font-size: 0.7rem;
+}
+
+.modal-active .modal-carrito {
+
+    margin-top: 50px;
+    font-size: 0.7rem;
+}
+.info{
+
+    font-size: 10px;
+}
+}

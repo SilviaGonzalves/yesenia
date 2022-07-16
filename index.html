@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<HTML lang="es">
+
+<HEAD>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name='viewport' content='width=device-width, initial-scale=1'> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- <meta name="keywords" content="coaching, coach, líderes, liderazgo,entrenamiento, desarrollo, personal, empresarial, crecimiento, elección">
+	<meta name="description" content="Alcanzá tus objetivos y concreta tus metas. Desafía tus límites personales y profesionales. Talleres orientados a directivos, mandos medios y equipos de trabajo."> -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />  
+
+	<!-- <link rel="shortcut icon" href="multimedia/favicon.ico"> -->
+	<!-- <link rel="stylesheet" href="fonts/style.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />		
+
+	 <script defer src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script> 
+	 <!-- <script defer src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+	 <script defer src="https://kit.fontawesome.com/d1b81f77bb.js" crossorigin="anonymous"></script>
+	 <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true" ></script> -->
+
+	 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	 <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
+	 <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+	<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	 <script defer src="js/app.js"></script>
+	
+	 <TITLE>yesenia</TITLE>
+
+</HEAD>
+
+<BODY>
+<div class="container-fluid">
+	<header class="row header">
+			
+		<!-- <h1 class="titPpal">MANOS QUE BRILLAN</h1> -->
+		<img src="./multimedia/1.png" id="imagen-logo" alt="logo" />
+        <button class="bu-clas" id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+		
+	</header>
+</div>
+<div class="container-fluid">
+	<div class="row leyendaPpal">
+		La tendencia ecológica ha llegado a la manicura y la pedicura. Cada vez son más las marcas que trabajan en la fórmula de sus productos de cosmética para conseguir ingredientes más respetuosos con el medioambiente y con nuestra propia salud. 
+	</div>
+	<div>
+		<h2 class="row titProductos">
+			Nuestros productos
+		</h2>
+	</div>
+	<main id="contenedor-productos" class="imgProductos">
+
+	</main>
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Su Pedido:</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            
+			<button id="vaciarCarrito" class="boton-eliminar" onclick="vaciarCarrito()">Vaciar carrito</button>
+			<button id="confirmaPedido"  onclick="confirmaPedido()">Finalizar pedido</button>
+        </div>
+    </div>
+
+    <div class="modal-contenedorE">
+		<div class="modal-carritoE">
+			<h3>MENSAJE DE ERROR</h3>
+			<button id="carritoCerrarE"><i class="fas fa-times-circle"></i></button>
+			<div id="carrito-contenedorE">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-contenedor-cantidad">
+		<div class="modal-clase-cantidad">
+			<div>
+				<p class="descProducto" id="descripcion"> </p>
+				<button id="btn-capturo-cerrar"><i class="fas fa-times-circle"></i></button>
+			</div>	
+			<div id="modal-capturo-cantidad">
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="form-contenedor">
+		<div id="form-pedido" class="formulario">
+
+		</div>
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</div>
+</BODY>
+
+</HTML>
