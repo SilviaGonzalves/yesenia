@@ -14,6 +14,8 @@ class Carrito {
 let carrito =[]
 let reciboCant = 0
 let contArt = 0
+// nada -- es una variable para poder completar el condicional especial
+// pongo -- es una variable donde pongo la cantidad cargada en lS  
 let nada = 0
 let pongo = 0
 let pongoImg = ""
@@ -126,7 +128,7 @@ function revisoLS(id){
     veoSiExiste? pongo = veoSiExiste.cantidad:pongo=0
 }
 function tratarCompra(id){
-    const btnComprar = document.querySelector('#btn-comprar')
+    // const btnComprar = document.querySelector('#btn-comprar')
     modalContenedorCantidad.classList.toggle('modal-active')
  
     const buscoImg = productos.find( ind => ind.id === id)
@@ -212,7 +214,7 @@ function muestroToast(producto){
 function mostrarError(codError){
 contenedorModalE.classList.toggle('modal-active')
 
-codError === 1?  carritoContenedorE.innerHTML=`Error: no se encontró el índice`: codError === 2?   carritoContenedorE.innerHTML=`Debe ingresar un numero > o igual a 0`: codError === 3?  carritoContenedorE.innerHTML=`Error en splice`: codError === 4?  carritoContenedorE.innerHTML=`Debe ingresar Nombre y Direccion` : nada = 0
+codError === 1?  carritoContenedorE.innerHTML=`Error: no se encontró el índice`: codError === 2?   carritoContenedorE.innerHTML=`El carrito no tiene artículos agregados`: codError === 3?  carritoContenedorE.innerHTML=`Debe confirmar después de agregar artículos`: codError === 4?  carritoContenedorE.innerHTML=`Debe ingresar Nombre y Direccion` : nada = 0
 }
 
 function contarArticulos() {
@@ -224,7 +226,7 @@ function contarArticulos() {
     })
 }
 function limpiarCarrito(){
-    let i = 0
+    // let i = 0
     carrito.forEach((i) =>{
          if (i.cantidad === 0){
             const reg = carrito.indexOf(i)
@@ -301,7 +303,10 @@ const removerDelCarrito = (id) => {
 }
 }
 function vaciarCarrito () {
-
+    if (carrito.length === 0){
+        contenedorModal.classList.toggle('modal-active')
+        mostrarError(2)
+    }else{
     Swal.fire({
         title: 'Realmente deseas vaciar el carrito?',
         text: "Acción irreversible!",
@@ -330,8 +335,14 @@ function vaciarCarrito () {
         }
       })
 
-}
+}}
 function confirmaPedido(){
+    if (carrito.length === 0){
+        contenedorModal.classList.toggle('modal-active')
+        mostrarError(3)
+    }else{
+
+
     contenedorModal.classList.toggle('modal-active')
     formContenedor.classList.toggle('modal-active')
     modalCarrito.classList.toggle('modal-active')
@@ -357,18 +368,28 @@ function confirmaPedido(){
     `
     formPedido.append(form)
 
-}
+}}
 function asentarConfirmacion(){
     formContenedor.classList.toggle('modal-active')
     let nombre = document.querySelector('#inputNombre')
     const direccion = document.querySelector('#inputDireccion')
-    const btnConfirma = document.querySelector('#btn-confirma')
+    // const btnConfirma = document.querySelector('#btn-confirma')
 
     if (nombre.value !== "" && direccion.value !== "" ){
           fun();
           localStorage.setItem("nombre", nombre.value);
           localStorage.setItem("direccion", direccion.value);
+          // Conrado me sugirió que limpie del carrito después de confirmar el pedido
+          // entonces no tiene sentido que guarde nombre y dirección porque eso lo hago
+          // cuando confirmo el pedido y si lo limpio nunca se guardaría
+          // Por lo tanto dejo que se guarde el nombre pero al momento se elimina, lo dejo
+          // como ejemplo pero no es funcional
           suboLS()
+          carrito.length = 0
+          contArt = 0
+          contadorCarrito.innerText = contArt
+          muestroCarrito()
+          eliminoDeLS()
     }else{
           mostrarError(4)
     }
